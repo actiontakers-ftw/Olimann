@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /inbox/
 Sitemap: https://olimann.com/sitemap.xml

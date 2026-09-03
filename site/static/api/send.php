@@ -2,16 +2,14 @@
 /*
  * Olimann — Constraint Audit form handler.
  *
- * Sends the request by authenticated SMTP through your Hostinger mailbox (reliable),
- * and falls back to PHP mail() when no SMTP password is configured.
- *
- * The mailbox info@olimann.com lives on Google Workspace, so the form authenticates
- * against smtp.gmail.com with a Google *App Password* (not the normal account password).
- *
- * SET-UP (once): copy api/config.sample.php to api/config.php and put the app password in it.
- * config.php is never overwritten by a site re-upload.
+ * 1. Every submission is SAVED on the server (folder olimann-data next to public_html, or api/data as a fallback)
+ *    and can be read at https://olimann.com/inbox/ — no configuration needed.
+ * 2. Additionally the request is emailed as a best-effort courtesy: by authenticated SMTP if api/config.php
+ *    holds a Google App Password (see config.sample.php), otherwise via PHP mail(), which may not arrive.
+ * The visitor sees the thank-you page as long as the submission was saved.
  */
 declare(strict_types=1);
+require __DIR__ . '/lib.php';
 
 $cfg = [
     'to'        => 'info@olimann.com',      // receives audit requests
@@ -145,14 +143,23 @@ function smtp_send(array $cfg, string $to, string $subjectEnc, array $headers, s
     return $ok;
 }
 
+$record = [
+    'id' => bin2hex(random_bytes(6)), 'time' => date('c'), 'lang' => $lang,
+    'name' => $name, 'company' => $company, 'role' => $role, 'email' => $email, 'website' => $website,
+    'pile' => $pile, 'pile_other' => $pileOther, 'revenue' => $revenue,
+    'headcount' => ['sales' => $line('hc_sales', 10), 'delivery' => $line('hc_delivery', 10), 'support' => $line('hc_support', 10), 'admin' => $line('hc_admin', 10)],
+    'double' => $q4, 'tools' => $q5, 'costheavy' => $q6,
+];
+$stored = olimann_store($record);
+if (!$stored) { error_log('olimann audit form: could not write submission to ' . olimann_data_dir()); }
+
 $err = '';
 if ($cfg['smtp_pass'] !== '') {
     $sent = smtp_send($cfg, $cfg['to'], $subjectEnc, $headers, $body, $err);
     if (!$sent) { error_log('olimann audit form: SMTP failed - ' . $err); }
 } else {
     $sent = @mail($cfg['to'], $subjectEnc, $body, implode("\r\n", $headers), '-f' . $cfg['from']);
-    if (!$sent) { error_log('olimann audit form: mail() returned false (no SMTP password configured)'); }
 }
 
-header('Location: ' . ($sent ? $thanks : $back . '?error=2#audit-form'), true, 303);
+header('Location: ' . (($stored || $sent) ? $thanks : $back . '?error=2#audit-form'), true, 303);
 exit;
