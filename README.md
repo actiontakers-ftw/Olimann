@@ -26,13 +26,23 @@ cd ../dist && zip -r ../olimann-site.zip .   # includes .htaccess
 2. Delete whatever is in `public_html` (default placeholder files), upload `olimann-site.zip`, right-click → **Extract** into `public_html`, then delete the zip.
    The result must be `public_html/index.html`, `public_html/de/`, `public_html/assets/`, `public_html/.htaccess`, etc. — not `public_html/dist/...`.
 3. hPanel → **SSL**: make sure the free certificate is active and "Force HTTPS" is on (the `.htaccess` also redirects to https and drops `www.`).
-4. hPanel → **Emails**: create the mailbox `info@olimann.com` (the form sends to it and from it).
-   Then give the form the mailbox password so it can send by authenticated SMTP, which is the reliable way on Hostinger:
-   in File Manager open `public_html/api/config.sample.php`, replace `PASTE-THE-MAILBOX-PASSWORD-HERE` with the mailbox password,
-   and save it as `public_html/api/config.php`. That file is not part of the bundle, so later re-uploads never overwrite it.
-   Without it the form falls back to PHP `mail()`, which Hostinger often refuses.
-   Submit a test request on `/constraint-audit/`; if it fails, hPanel → Advanced → PHP Configuration → error log shows the SMTP reason.
+4. **Form email (Google Workspace).** The mailbox info@olimann.com is on Google Workspace, so the form sends through
+   Google's SMTP server, authenticated with an *App Password*:
+   - Sign in to Google as info@olimann.com → Manage your Google Account → Security → make sure **2-Step Verification** is on
+     (an App Password cannot be created without it; a Workspace admin can enable it for the account).
+   - Security → **App passwords** → name it "Olimann website" → Google shows a 16-character password once. Copy it.
+   - In Hostinger's File Manager open `public_html/api/config.sample.php`, paste the app password in place of the placeholder,
+     and save it as `public_html/api/config.php`. That file is not part of the bundle, so later re-uploads never overwrite it.
+   - Submit a test on `/constraint-audit/`. If it fails, hPanel → Advanced → PHP Configuration → error log names the SMTP reason.
+   Do **not** create an info@ mailbox in Hostinger's own email service; the domain's mail must keep going to Google.
 5. Check `https://olimann.com/`, `/de/`, `/constraint-audit/`, `/imprint/` on a phone and a laptop.
+
+### DNS: keep email on Google when the domain moves to Hostinger
+
+When olimann.com is pointed at Hostinger hosting, check the DNS zone (hPanel → Domains → olimann.com → DNS / Nameservers)
+**before and after**: the MX records must still be Google's (`ASPMX.L.GOOGLE.COM` and the `ALT…` entries) and the SPF TXT record
+must still contain `include:_spf.google.com`. Hostinger's setup wizard sometimes replaces MX records with its own mail servers,
+which would silently stop incoming mail to info@olimann.com. If that happened, restore Google's MX records in the zone editor.
 
 ### Before sending the link to anyone
 

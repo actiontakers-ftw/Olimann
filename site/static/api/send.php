@@ -5,20 +5,21 @@
  * Sends the request by authenticated SMTP through your Hostinger mailbox (reliable),
  * and falls back to PHP mail() when no SMTP password is configured.
  *
- * SET-UP (once): create the mailbox in hPanel → Emails, then either
- *   a) copy api/config.sample.php to api/config.php and put the mailbox password in it
- *      (config.php is never overwritten by a site re-upload), or
- *   b) edit the defaults right here.
+ * The mailbox info@olimann.com lives on Google Workspace, so the form authenticates
+ * against smtp.gmail.com with a Google *App Password* (not the normal account password).
+ *
+ * SET-UP (once): copy api/config.sample.php to api/config.php and put the app password in it.
+ * config.php is never overwritten by a site re-upload.
  */
 declare(strict_types=1);
 
 $cfg = [
     'to'        => 'info@olimann.com',      // receives audit requests
     'from'      => 'info@olimann.com',      // sender; must be a mailbox on the domain
-    'smtp_host' => 'smtp.hostinger.com',
+    'smtp_host' => 'smtp.gmail.com',        // Google Workspace
     'smtp_port' => 465,                     // 465 = SSL, 587 = STARTTLS
     'smtp_user' => 'info@olimann.com',
-    'smtp_pass' => '',                      // mailbox password; empty = fall back to mail()
+    'smtp_pass' => '',                      // Google App Password (16 characters); empty = fall back to mail()
 ];
 if (is_file(__DIR__ . '/config.php')) {
     $override = include __DIR__ . '/config.php';
