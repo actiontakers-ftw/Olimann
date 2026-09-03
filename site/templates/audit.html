@@ -11,7 +11,7 @@
   <input type="hidden" name="lang" value="{{ lang }}">
   <input type="hidden" name="ts" value="">
   <div class="hp" aria-hidden="true"><label>Fax <input type="text" name="fax" tabindex="-1" autocomplete="off"></label></div>
-  <div class="form-error" role="alert">{{ f.error1 }} {{ f.error2 }}</div>
+  <div class="form-error" role="alert"><span data-err="1">{{ f.error1 }}</span><span data-err="2">{{ f.error2 }}</span></div>
 
   <div class="field">
     <span class="lbl">1 · {{ f.q1 }}</span>
@@ -42,9 +42,9 @@
     </div>
   </div>
 
-  <div class="field"><label for="capacity">4 · {{ f.q4 }}</label><textarea id="capacity" name="capacity" rows="4"></textarea></div>
+  <div class="field"><label for="double">4 · {{ f.q4 }}</label><textarea id="double" name="double" rows="4"></textarea></div>
   <div class="field"><label for="tools">5 · {{ f.q5 }}</label><textarea id="tools" name="tools" rows="3"></textarea></div>
-  <div class="field"><label for="expensive">6 · {{ f.q6 }}</label><textarea id="expensive" name="expensive" rows="4"></textarea></div>
+  <div class="field"><label for="costheavy">6 · {{ f.q6 }}</label><textarea id="costheavy" name="costheavy" rows="4"></textarea></div>
 
   <div class="field"><label class="consent"><input type="checkbox" name="consent" value="1" required><span>{{ f.consent }}</span></label></div>
   <button class="btn btn-primary" type="submit">{{ f.submit }}</button>

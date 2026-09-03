@@ -44,7 +44,7 @@
   } else { [].forEach.call(d.querySelectorAll('.rv'), function(el){ el.classList.add('in'); }); }
 
   /* form error from redirect */
-  var err=d.querySelector('.form-error');
-  if(err && /[?&]error=/.test(location.search)){ err.classList.add('show'); err.scrollIntoView({block:'center'}); }
+  var err=d.querySelector('.form-error'), em=/[?&]error=(\d)/.exec(location.search);
+  if(err && em){ var span=err.querySelector('[data-err="'+em[1]+'"]')||err.querySelector('[data-err="2"]'); if(span){ span.classList.add('show'); } err.classList.add('show'); err.scrollIntoView({block:'center'}); }
   var ts=d.querySelector('input[name=ts]'); if(ts){ ts.value=String(Math.floor(Date.now()/1000)); }
 })();

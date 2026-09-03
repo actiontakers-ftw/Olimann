@@ -22,7 +22,7 @@
 <link rel="preload" href="/assets/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.css?v=202609031002">
+<link rel="stylesheet" href="/assets/css/site.css?v=202609031010">
 </head>
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a>
@@ -52,7 +52,7 @@
   <input type="hidden" name="lang" value="de">
   <input type="hidden" name="ts" value="">
   <div class="hp" aria-hidden="true"><label>Fax <input type="text" name="fax" tabindex="-1" autocomplete="off"></label></div>
-  <div class="form-error" role="alert">Bitte geben Sie Name, Unternehmen und eine gültige E-Mail-Adresse an. Die Nachricht konnte nicht gesendet werden. Bitte schreiben Sie uns direkt an <a href="mailto:info@olimann.com">info@olimann.com</a>.</div>
+  <div class="form-error" role="alert"><span data-err="1">Bitte geben Sie Name, Unternehmen und eine gültige E-Mail-Adresse an.</span><span data-err="2">Die Anfrage konnte vom Server nicht versendet werden. Bitte schreiben Sie uns direkt an <a href="mailto:info@olimann.com">info@olimann.com</a>.</span></div>
 
   <div class="field">
     <span class="lbl">1 · Sie</span>
@@ -78,9 +78,9 @@
     <div class="grid4"><div><span>Vertrieb & Marketing</span><input type="number" name="hc_sales" min="0" max="99999" inputmode="numeric" aria-label="Vertrieb & Marketing"></div><div><span>Umsetzung & Betrieb</span><input type="number" name="hc_delivery" min="0" max="99999" inputmode="numeric" aria-label="Umsetzung & Betrieb"></div><div><span>Support</span><input type="number" name="hc_support" min="0" max="99999" inputmode="numeric" aria-label="Support"></div><div><span>Verwaltung</span><input type="number" name="hc_admin" min="0" max="99999" inputmode="numeric" aria-label="Verwaltung"></div>    </div>
   </div>
 
-  <div class="field"><label for="capacity">4 · Was würden Sie im nächsten Quartal mit 20 % mehr Kapazität tun?</label><textarea id="capacity" name="capacity" rows="4"></textarea></div>
+  <div class="field"><label for="double">4 · Wenn Sie morgen doppelt so viele Kunden hätten: Verdoppelt sich Ihr Umsatz – oder bricht etwas?</label><textarea id="double" name="double" rows="4"></textarea></div>
   <div class="field"><label for="tools">5 · Welche Tools laufen heute in Vertrieb, Umsetzung und Support?</label><textarea id="tools" name="tools" rows="3"></textarea></div>
-  <div class="field"><label for="expensive">6 · Wer ist die teuerste Person im Unternehmen – und was macht sie an einem typischen Dienstag?</label><textarea id="expensive" name="expensive" rows="4"></textarea></div>
+  <div class="field"><label for="costheavy">6 · Welcher Ablauf oder Bereich kostet derzeit am meisten Geld und Personal – gemessen daran, was er an Umsatz und Wachstum zurückbringt?</label><textarea id="costheavy" name="costheavy" rows="4"></textarea></div>
 
   <div class="field"><label class="consent"><input type="checkbox" name="consent" value="1" required><span>Ich habe die <a href="/de/datenschutz/">Datenschutzerklärung</a> gelesen. Meine Angaben werden ausschließlich zur Vorbereitung der Analyse verwendet.</span></label></div>
   <button class="btn btn-primary" type="submit">Analyse anfragen</button>
@@ -115,6 +115,6 @@
     <div class="legal-line"><span>© 2026 Olimann</span><span>Keine Cookies. Kein Tracking. Schriften von dieser Domain.</span></div>
   </div>
 </footer>
-<script src="/assets/js/site.js?v=202609031002" defer></script>
+<script src="/assets/js/site.js?v=202609031010" defer></script>
 </body>
 </html>

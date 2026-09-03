@@ -16,6 +16,10 @@ AddType image/svg+xml .svg
   RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
 </IfModule>
 
+<FilesMatch "^config(\.sample)?\.php$">
+  Require all denied
+</FilesMatch>
+
 ErrorDocument 404 /404.html
 
 <IfModule mod_headers.c>

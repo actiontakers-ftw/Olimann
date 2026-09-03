@@ -26,7 +26,12 @@ cd ../dist && zip -r ../olimann-site.zip .   # includes .htaccess
 2. Delete whatever is in `public_html` (default placeholder files), upload `olimann-site.zip`, right-click → **Extract** into `public_html`, then delete the zip.
    The result must be `public_html/index.html`, `public_html/de/`, `public_html/assets/`, `public_html/.htaccess`, etc. — not `public_html/dist/...`.
 3. hPanel → **SSL**: make sure the free certificate is active and "Force HTTPS" is on (the `.htaccess` also redirects to https and drops `www.`).
-4. hPanel → **Emails**: the form sends to and from `info@olimann.com` (both set at the top of `api/send.php`). The mailbox must exist on the domain, or Hostinger's PHP `mail()` will refuse to send. Then submit a test request on `/constraint-audit/` and check the inbox (and the spam folder once).
+4. hPanel → **Emails**: create the mailbox `info@olimann.com` (the form sends to it and from it).
+   Then give the form the mailbox password so it can send by authenticated SMTP, which is the reliable way on Hostinger:
+   in File Manager open `public_html/api/config.sample.php`, replace `PASTE-THE-MAILBOX-PASSWORD-HERE` with the mailbox password,
+   and save it as `public_html/api/config.php`. That file is not part of the bundle, so later re-uploads never overwrite it.
+   Without it the form falls back to PHP `mail()`, which Hostinger often refuses.
+   Submit a test request on `/constraint-audit/`; if it fails, hPanel → Advanced → PHP Configuration → error log shows the SMTP reason.
 5. Check `https://olimann.com/`, `/de/`, `/constraint-audit/`, `/imprint/` on a phone and a laptop.
 
 ### Before sending the link to anyone
