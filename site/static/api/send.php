@@ -66,7 +66,6 @@ foreach (['hc_sales' => 'Sales & marketing', 'hc_delivery' => 'Delivery & operat
 }
 $q4 = $text('double');
 $q5 = $text('tools');
-$q6 = $text('costheavy');
 
 $body  = ($lang === 'de' ? "Neue Engpass-Analyse-Anfrage" : "New Constraint Audit request") . "\n";
 $body .= str_repeat('=', 40) . "\n\n";
@@ -76,7 +75,6 @@ $body .= "Revenue band: " . ($revenue !== '' ? $revenue : '-') . "\n";
 $body .= "Headcount:    " . ($hc ? implode(' | ', $hc) : '-') . "\n\n";
 $body .= "Double the customers tomorrow - revenue doubles or something breaks?\n" . ($q4 !== '' ? $q4 : '-') . "\n\n";
 $body .= "Tools in sales, delivery, support:\n" . ($q5 !== '' ? $q5 : '-') . "\n\n";
-$body .= "Most cost- and resource-heavy workflow/department vs. its return:\n" . ($q6 !== '' ? $q6 : '-') . "\n\n";
 $body .= str_repeat('-', 40) . "\nSent " . date('c') . " from " . ($_SERVER['REMOTE_ADDR'] ?? '?') . "\n";
 
 $subject    = ($lang === 'de' ? 'Engpass-Analyse: ' : 'Constraint Audit: ') . $company;
@@ -148,7 +146,7 @@ $record = [
     'name' => $name, 'company' => $company, 'role' => $role, 'email' => $email, 'website' => $website,
     'pile' => $pile, 'pile_other' => $pileOther, 'revenue' => $revenue,
     'headcount' => ['sales' => $line('hc_sales', 10), 'delivery' => $line('hc_delivery', 10), 'support' => $line('hc_support', 10), 'admin' => $line('hc_admin', 10)],
-    'double' => $q4, 'tools' => $q5, 'costheavy' => $q6,
+    'double' => $q4, 'tools' => $q5,
 ];
 $stored = olimann_store($record);
 if (!$stored) { error_log('olimann audit form: could not write submission to ' . olimann_data_dir()); }

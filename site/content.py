@@ -149,7 +149,7 @@ T["en"] = dict(
         cta="Start with a Constraint Audit"),
     audit=dict(
         eyebrow="Constraint Audit", h1="Find your constraint before you spend a euro automating the wrong side.",
-        lede="Answer six questions. We get back to you as soon as possible with proposed times for a conversation with the member of the team who would run your audit. After it, you receive a written readout: where your constraint is, what we would automate first, what capacity that frees, and a fixed price for the first system — if we think there should be one.",
+        lede="Answer five questions. We get back to you as soon as possible with proposed times for a conversation with the member of the team who would run your audit. After it, you receive a written readout: where your constraint is, what we would automate first, what capacity that frees, and a fixed price for the first system — if we think there should be one.",
         get_h="What you get",
         get=["A clear answer to \"demand or capacity?\" — with the reasoning.", "The first system we would build, and why that one.", "A fixed price. Or an honest \"not yet\"."],
         free="The audit is free of charge and commits you to nothing.",
@@ -162,7 +162,6 @@ T["en"] = dict(
                hc="Headcount, roughly (optional)", hc_labels=["Sales & marketing", "Delivery & operations", "Support", "Admin"],
                q4="If you had double the customers tomorrow, would your revenue double, or would something break?",
                q5="Which tools run sales, delivery and support today?",
-               q6="Which workflow or department currently costs the most in money and people, relative to what it returns in revenue and growth?",
                consent="I have read the <a href=\"/privacy/\">privacy policy</a>. My answers are used only to prepare the audit.",
                submit="Request the audit")),
     thanks=dict(eyebrow="Received", h1="Thank you. We will get back to you as soon as possible.",
@@ -316,7 +315,7 @@ T["de"] = dict(
         cta="Engpass-Analyse starten"),
     audit=dict(
         eyebrow="Engpass-Analyse", h1="Finden Sie Ihren Engpass, bevor Sie einen Euro in die Automatisierung der falschen Seite stecken.",
-        lede="Beantworten Sie sechs Fragen. Wir melden uns so schnell wie möglich mit Terminvorschlägen für ein Gespräch mit dem Teammitglied, das Ihre Analyse durchführen würde. Danach erhalten Sie eine schriftliche Auswertung: wo Ihr Engpass sitzt, was wir zuerst automatisieren würden, welche Kapazität das freisetzt – und einen Festpreis für das erste System, sofern wir meinen, dass es eines geben sollte.",
+        lede="Beantworten Sie fünf Fragen. Wir melden uns so schnell wie möglich mit Terminvorschlägen für ein Gespräch mit dem Teammitglied, das Ihre Analyse durchführen würde. Danach erhalten Sie eine schriftliche Auswertung: wo Ihr Engpass sitzt, was wir zuerst automatisieren würden, welche Kapazität das freisetzt – und einen Festpreis für das erste System, sofern wir meinen, dass es eines geben sollte.",
         get_h="Was Sie bekommen",
         get=["Eine klare Antwort auf „Nachfrage oder Kapazität?“ – mit Begründung.", "Das erste System, das wir bauen würden – und warum genau dieses.", "Einen Festpreis. Oder ein ehrliches „Noch nicht“."],
         free="Die Analyse ist kostenlos und unverbindlich.",
@@ -329,7 +328,6 @@ T["de"] = dict(
                hc="Mitarbeitende, grob (optional)", hc_labels=["Vertrieb & Marketing", "Umsetzung & Betrieb", "Support", "Verwaltung"],
                q4="Wenn Sie morgen doppelt so viele Kunden hätten: Verdoppelt sich Ihr Umsatz – oder bricht etwas?",
                q5="Welche Tools laufen heute in Vertrieb, Umsetzung und Support?",
-               q6="Welcher Ablauf oder Bereich kostet derzeit am meisten Geld und Personal – gemessen daran, was er an Umsatz und Wachstum zurückbringt?",
                consent="Ich habe die <a href=\"/de/datenschutz/\">Datenschutzerklärung</a> gelesen. Meine Angaben werden ausschließlich zur Vorbereitung der Analyse verwendet.",
                submit="Analyse anfragen")),
     thanks=dict(eyebrow="Angekommen", h1="Vielen Dank. Wir melden uns so schnell wie möglich bei Ihnen.",

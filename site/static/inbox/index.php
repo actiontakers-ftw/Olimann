@@ -153,7 +153,7 @@ if ($in && $action === 'csv') {
     <div>
       <div class="lbl">Double the customers tomorrow: revenue doubles, or something breaks?</div><p class="ans"><?= e(($r['double'] ?? '') !== '' ? $r['double'] : '–') ?></p>
       <div class="lbl">Tools in sales, delivery, support</div><p class="ans"><?= e(($r['tools'] ?? '') !== '' ? $r['tools'] : '–') ?></p>
-      <div class="lbl">Most cost- and resource-heavy workflow or department vs. its return</div><p class="ans"><?= e(($r['costheavy'] ?? '') !== '' ? $r['costheavy'] : '–') ?></p>
+      <?php if (($r['costheavy'] ?? '') !== ''): ?><div class="lbl">Most cost- and resource-heavy workflow or department vs. its return</div><p class="ans"><?= e($r['costheavy']) ?></p><?php endif; ?>
     </div>
   </article>
   <?php endforeach; ?>
