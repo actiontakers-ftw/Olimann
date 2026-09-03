@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% set l = t[key] %}
+{% block main %}
+<section class="page-hero dark"><div class="wrap"><h1>{{ l.title }}</h1><p class="lede">{{ l.intro }}</p></div></section>
+<section class="light sec"><div class="wrap"><div class="legal">{{ l.html }}</div></div></section>
+{% endblock %}

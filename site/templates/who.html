@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% set w = t.who %}
+{% block main %}
+<section class="page-hero dark"><div class="wrap"><p class="eyebrow">{{ w.eyebrow }}</p><h1>{{ w.h1 }}</h1><p class="lede">{{ w.p }}</p></div></section>
+<section class="light sec"><div class="wrap split">
+<div class="article rv"><h2 style="margin-top:0">{{ w.yes_h }}</h2><ul>{% for y in w.yes %}<li>{{ y }}</li>{% endfor %}</ul></div>
+<div class="article rv"><h2 style="margin-top:0">{{ w.no_h }}</h2><ul>{% for n in w.no %}<li>{{ n }}</li>{% endfor %}</ul><p class="serif-line" style="margin-top:20px;font-size:24px">{{ w.line }}</p><div class="ctas"><a class="btn btn-primary" href="{{ nav.audit }}">{{ w.cta }}</a></div></div>
+</div></section>
+{% endblock %}

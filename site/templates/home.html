@@ -1,0 +1,114 @@
+{% extends "base.html" %}{% set h = t.home %}
+{% block main %}
+<section class="hero dark">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">{{ h.hero.eyebrow }}</p>
+      <h1>{{ h.hero.h1 }}</h1>
+      <p class="lede">{{ h.hero.lede }}</p>
+      <div class="ctas"><a class="btn btn-primary" href="{{ nav.audit }}">{{ h.hero.cta1 }}</a><a class="btn" href="#flywheel">{{ h.hero.cta2 }}</a></div>
+    </div>
+    <div class="ring-wrap">{{ ring('hero', cls='ring-hero') }}</div>
+  </div>
+</section>
+
+<section class="lifecycle dark sec-tight">
+  <div class="wrap">
+    <p class="eyebrow">{{ h.lifecycle.eyebrow }}</p>
+    <div class="groups">
+      {%- for g in h.lifecycle.groups %}
+      <div class="group {{ g.cls }}"><p class="group-lbl">{{ g.label }}</p><div class="chips">{% for c in g.chips %}<span class="chip">{{ c }}</span>{% endfor %}</div></div>
+      {%- endfor %}
+    </div>
+    <p class="measure">{{ h.lifecycle.text }}</p>
+  </div>
+</section>
+
+<section class="problem light sec">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="measure">{{ h.problem.h2 }}</h2>
+      <p class="lede" style="margin-top:22px">{{ h.problem.p1 }}</p>
+      <p class="measure">{{ h.problem.p2 }}</p>
+    </div>
+    <div class="two-panels rv">
+      {%- for p in h.problem.panels %}<div class="panel"><h3>{{ p.h }}</h3><p>{{ p.p }}</p></div>{% endfor %}
+    </div>
+    <p class="serif-line rv">{{ h.problem.line }}</p>
+  </div>
+</section>
+
+<section class="flywheel dark sec" id="flywheel">
+  <div class="wrap">
+    <p class="eyebrow">{{ h.flywheel.eyebrow }}</p>
+    <h2 class="measure">{{ h.flywheel.h2 }}</h2>
+    <div class="fw-grid">
+      <div class="fw-stick">
+        {{ ring('diagram', labels=ring_labels, cls='ring-diagram') }}
+        <div class="fw-metric" aria-hidden="true"><span>{{ h.flywheel.metric }}</span><div class="bar"><i></i></div><div class="val"><span>{{ h.flywheel.metric_lo }}</span><span>{{ h.flywheel.metric_hi }}</span></div></div>
+      </div>
+      <div class="fw-steps">
+        {%- for s in h.flywheel.steps %}
+        <div class="fw-step" data-n="{{ loop.index }}"><div class="n">0{{ loop.index }}</div><h3>{{ s.h }}</h3><p>{{ s.p }}</p></div>
+        {%- endfor %}
+      </div>
+    </div>
+    <p class="fw-close lede">{{ h.flywheel.close }}</p>
+  </div>
+</section>
+
+<section class="capabilities light sec">
+  <div class="wrap">
+    <div class="rv"><p class="eyebrow">{{ h.caps.eyebrow }}</p><h2 class="measure">{{ h.caps.h2 }}</h2><p class="lede" style="margin-top:22px">{{ h.caps.p }}</p></div>
+    <div class="dept-grid">
+      {%- for d in t.departments["items"] %}
+      <div class="dept rv"><h3>{{ d.h }}</h3><p>{{ d.p }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="engagement cream sec">
+  <div class="wrap">
+    <div class="rv"><p class="eyebrow">{{ h.engagement.eyebrow }}</p><h2>{{ h.engagement.h2 }}</h2></div>
+    <div class="stages rv">
+      {%- for s in h.engagement.stages %}<div class="stage"><h3>{{ s.h }}</h3><p>{{ s.p }}</p></div>{% endfor %}
+    </div>
+    <p class="measure rv" style="margin-top:36px">{{ h.engagement.line }}</p>
+  </div>
+</section>
+
+<section class="who light sec">
+  <div class="wrap split">
+    <div class="rv"><p class="eyebrow">{{ h.who.eyebrow }}</p><h2>{{ h.who.h2 }}</h2></div>
+    <div class="rv"><p class="lede">{{ h.who.p }}</p><p class="notfor">{{ h.who.notfor }}</p><div class="ctas" style="margin-top:22px"><a class="btn" href="{{ nav.who }}">{{ h.who.cta }}</a></div></div>
+  </div>
+</section>
+
+<section class="about-teaser dark sec-tight">
+  <div class="wrap split">
+    <div><p class="eyebrow">{{ h.about.eyebrow }}</p><h2>{{ h.about.h2 }}</h2></div>
+    <div><p class="lede">{{ h.about.p }}</p><div class="ctas" style="margin-top:22px"><a class="btn" href="{{ nav.about }}">{{ h.about.cta }}</a></div></div>
+  </div>
+</section>
+
+<section class="faq-sec light sec">
+  <div class="wrap">
+    <p class="eyebrow">{{ h.faq.eyebrow }}</p><h2>{{ h.faq.h2 }}</h2>
+    <div class="faq">
+      {%- for f in h.faq["items"] %}
+      <details{% if loop.first %} open{% endif %}><summary>{{ f.q }}</summary><div class="a">{{ f.a }}</div></details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="close dark sec">
+  <div class="wrap">
+    {{ ring('hero', cls='ring-small') }}
+    <h2>{{ h.close.h2 }}</h2>
+    <p class="lede">{{ h.close.p }}</p>
+    <div class="ctas"><a class="btn btn-primary" href="{{ nav.audit }}">{{ h.close.cta }}</a></div>
+  </div>
+</section>
+{% endblock %}

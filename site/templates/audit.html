@@ -1,0 +1,53 @@
+{% extends "base.html" %}{% set a = t.audit %}{% set f = a.f %}
+{% block main %}
+<section class="page-hero dark"><div class="wrap"><p class="eyebrow">{{ a.eyebrow }}</p><h1>{{ a.h1 }}</h1><p class="lede">{{ a.lede }}</p></div></section>
+<section class="light sec"><div class="wrap split">
+<div class="article">
+  <h2 style="margin-top:0">{{ a.get_h }}</h2>
+  <ul>{% for g in a["get"] %}<li>{{ g }}</li>{% endfor %}</ul>
+  <p class="notfor">{{ a.free }}</p>
+</div>
+<form class="form" id="audit-form" method="post" action="/api/send.php" accept-charset="UTF-8">
+  <input type="hidden" name="lang" value="{{ lang }}">
+  <input type="hidden" name="ts" value="">
+  <div class="hp" aria-hidden="true"><label>Fax <input type="text" name="fax" tabindex="-1" autocomplete="off"></label></div>
+  <div class="form-error" role="alert">{{ f.error1 }} {{ f.error2 }}</div>
+
+  <div class="field">
+    <span class="lbl">1 · {{ f.q1 }}</span>
+    <div class="grid2">
+      <input type="text" name="name" placeholder="{{ f.name }}" aria-label="{{ f.name }}" required autocomplete="name">
+      <input type="text" name="company" placeholder="{{ f.company }}" aria-label="{{ f.company }}" required autocomplete="organization">
+      <input type="text" name="role" placeholder="{{ f.role }}" aria-label="{{ f.role }}" autocomplete="organization-title">
+      <input type="email" name="email" placeholder="{{ f.email }}" aria-label="{{ f.email }}" required autocomplete="email">
+      <input type="text" name="website" placeholder="{{ f.website }}" aria-label="{{ f.website }}" autocomplete="url" style="grid-column:1/-1">
+    </div>
+  </div>
+
+  <div class="field">
+    <span class="lbl">2 · {{ f.q2 }}</span><p class="hint">{{ f.q2hint }}</p>
+    <div class="toggles">
+      {%- for p in f.pile %}<label class="toggle"><input type="checkbox" name="pile[]" value="{{ p }}"><span>{{ p }}</span></label>{% endfor %}
+    </div>
+    <input type="text" name="pile_other" placeholder="{{ f.pile_other }} …" aria-label="{{ f.pile_other }}" style="margin-top:10px">
+  </div>
+
+  <div class="field">
+    <label for="revenue">3 · {{ f.q3 }}</label>
+    <select id="revenue" name="revenue"><option value="">{{ f.revenue }}: {{ f.rev_pick }}</option>{% for o in f.rev_opts %}<option value="{{ o }}">{{ o }}</option>{% endfor %}</select>
+    <p class="hint" style="margin-top:12px">{{ f.hc }}</p>
+    <div class="grid4">
+      {%- set hck = ['hc_sales','hc_delivery','hc_support','hc_admin'] %}
+      {%- for l in f.hc_labels %}<div><span>{{ l }}</span><input type="number" name="{{ hck[loop.index0] }}" min="0" max="99999" inputmode="numeric" aria-label="{{ l }}"></div>{% endfor %}
+    </div>
+  </div>
+
+  <div class="field"><label for="capacity">4 · {{ f.q4 }}</label><textarea id="capacity" name="capacity" rows="4"></textarea></div>
+  <div class="field"><label for="tools">5 · {{ f.q5 }}</label><textarea id="tools" name="tools" rows="3"></textarea></div>
+  <div class="field"><label for="expensive">6 · {{ f.q6 }}</label><textarea id="expensive" name="expensive" rows="4"></textarea></div>
+
+  <div class="field"><label class="consent"><input type="checkbox" name="consent" value="1" required><span>{{ f.consent }}</span></label></div>
+  <button class="btn btn-primary" type="submit">{{ f.submit }}</button>
+</form>
+</div></section>
+{% endblock %}

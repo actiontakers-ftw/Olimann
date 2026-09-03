@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% set a = t.about %}
+{% block main %}
+<section class="page-hero dark"><div class="wrap"><p class="eyebrow">{{ a.eyebrow }}</p><h1>{{ a.h1 }}</h1></div></section>
+<section class="light sec"><div class="wrap split">
+<div class="article rv">{% for p in a.paras %}<p class="lede">{{ p }}</p>{% endfor %}</div>
+<div class="article rv"><h2 style="margin-top:0">{{ a.how_h }}</h2><ul>{% for hh in a.how %}<li>{{ hh }}</li>{% endfor %}</ul><div class="ctas"><a class="btn btn-primary" href="{{ nav.audit }}">{{ a.cta }}</a></div></div>
+</div></section>
+{% endblock %}

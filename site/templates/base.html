@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ meta[0] }}</title>
+<meta name="description" content="{{ meta[1] }}">
+<link rel="canonical" href="{{ site.domain }}{{ path }}">
+{%- for l, p in alternates %}
+<link rel="alternate" hreflang="{{ l }}" href="{{ site.domain }}{{ p }}">
+{%- endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ site.domain }}{{ xdefault }}">
+{%- if noindex %}
+<meta name="robots" content="noindex, follow">
+{%- endif %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Olimann">
+<meta property="og:title" content="{{ meta[0] }}">
+<meta property="og:description" content="{{ meta[1] }}">
+<meta property="og:url" content="{{ site.domain }}{{ path }}">
+<meta property="og:image" content="{{ site.domain }}/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{{ 'de_DE' if lang == 'de' else 'en_US' }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#081F40">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/apple-touch-icon.png" type="image/png" sizes="180x180">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css?v={{ build }}">
+</head>
+<body>
+<a class="skip" href="#main">{{ ui.skip }}</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="{{ nav.home }}" aria-label="Olimann">{{ ring('logo') }}<span class="word">Olimann</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="{{ ui.menu }}"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="{{ nav.method }}"{% if key == 'method' %} aria-current="page"{% endif %}>{{ ui.nav_method }}</a>
+      <a href="{{ nav.departments }}"{% if key == 'departments' %} aria-current="page"{% endif %}>{{ ui.nav_departments }}</a>
+      <a href="{{ nav.who }}"{% if key == 'who' %} aria-current="page"{% endif %}>{{ ui.nav_who }}</a>
+      <a href="{{ nav.about }}"{% if key == 'about' %} aria-current="page"{% endif %}>{{ ui.nav_about }}</a>
+      <a class="lang" href="{{ alt_path }}" hreflang="{{ alt_lang }}" lang="{{ alt_lang }}" title="{{ ui.lang_title }}">{{ ui.lang_toggle }}</a>
+      <a class="btn btn-primary" href="{{ nav.audit }}">{{ ui.nav_audit }}</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="{{ nav.home }}" aria-label="Olimann">{{ ring('logo') }}<span class="word">Olimann</span></a>
+      <p>{{ ui.footer_tagline }}</p>
+    </div>
+    <div>
+      <h4>{{ ui.footer_pages }}</h4>
+      <ul>
+        <li><a href="{{ nav.method }}">{{ ui.nav_method }}</a></li>
+        <li><a href="{{ nav.departments }}">{{ ui.nav_departments }}</a></li>
+        <li><a href="{{ nav.who }}">{{ ui.nav_who }}</a></li>
+        <li><a href="{{ nav.about }}">{{ ui.nav_about }}</a></li>
+        <li><a href="{{ nav.audit }}">{{ ui.nav_audit }}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>{{ ui.footer_legal }}</h4>
+      <ul>
+        <li><a href="{{ nav.imprint }}">{{ ui.imprint }}</a></li>
+        <li><a href="{{ nav.privacy }}">{{ ui.privacy }}</a></li>
+        <li><a href="mailto:hello@olimann.com">hello@olimann.com</a></li>
+        <li><a href="{{ alt_path }}" hreflang="{{ alt_lang }}" lang="{{ alt_lang }}">{{ 'Deutsch' if lang == 'en' else 'English' }}</a></li>
+      </ul>
+    </div>
+    <div class="legal-line"><span>{{ ui.copyright }}</span><span>{{ ui.footer_note }}</span></div>
+  </div>
+</footer>
+<script src="/assets/js/site.js?v={{ build }}" defer></script>
+</body>
+</html>

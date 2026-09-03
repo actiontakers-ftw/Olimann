@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% set m = t.method %}
+{% block main %}
+<section class="page-hero dark"><div class="wrap"><p class="eyebrow">{{ m.eyebrow }}</p><h1>{{ m.h1 }}</h1><p class="lede">{{ m.lede }}</p><p class="measure">{{ m.p }}</p></div></section>
+<section class="light sec"><div class="wrap"><div class="article">
+{%- for b in m.blocks %}
+<h2 class="rv">{{ b.h2 }}</h2>{{ b.html }}
+{%- endfor %}
+<div class="ctas"><a class="btn btn-primary" href="{{ nav.audit }}">{{ m.cta }}</a></div>
+</div></div></section>
+{% endblock %}

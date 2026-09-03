@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% set d = t.departments %}
+{% block main %}
+<section class="page-hero dark"><div class="wrap"><p class="eyebrow">{{ d.eyebrow }}</p><h1>{{ d.h1 }}</h1><p class="lede">{{ d.p }}</p></div></section>
+<section class="light sec"><div class="wrap">
+<div class="dept-grid" style="margin-top:0">
+{%- for it in d["items"] %}<div class="dept rv"><h3>{{ it.h }}</h3><p class="before">{{ it.before }}</p><p>{{ it.p }}</p></div>{% endfor %}
+</div>
+<div class="ctas" style="margin-top:56px"><a class="btn btn-primary" href="{{ nav.audit }}">{{ d.cta }}</a></div>
+</div></section>
+{% endblock %}
