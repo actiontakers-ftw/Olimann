@@ -153,7 +153,7 @@ T["en"] = dict(
         get_h="What you get",
         get=["A clear answer to \"demand or capacity?\" — with the reasoning.", "The first system we would build, and why that one.", "A fixed price. Or an honest \"not yet\"."],
         free="The audit is free of charge and commits you to nothing.",
-        f=dict(error1="Please fill in your name, company and a valid email address.", error2="The message could not be sent. Please email us directly at <a href=\"mailto:hello@olimann.com\">hello@olimann.com</a>.",
+        f=dict(error1="Please fill in your name, company and a valid email address.", error2="The message could not be sent. Please email us directly at <a href=\"mailto:info@olimann.com\">info@olimann.com</a>.",
                q1="You", name="Name", company="Company", role="Role", email="Email", website="Website (optional)",
                q2="Where does work pile up right now?", q2hint="Pick everything that applies.",
                pile=["Inquiries wait for a reply", "Quotes and proposals take too long", "Signed projects wait to start", "Projects run late", "The support queue keeps growing", "Reporting takes too long", "Hiring cannot keep up"],
@@ -166,13 +166,13 @@ T["en"] = dict(
                consent="I have read the <a href=\"/privacy/\">privacy policy</a>. My answers are used only to prepare the audit.",
                submit="Request the audit")),
     thanks=dict(eyebrow="Received", h1="Thank you. A member of the team will reply within two working days.",
-                p="You will get proposed times for the 45-minute conversation — from a person, not an autoresponder. If it is urgent, write to <a href=\"mailto:hello@olimann.com\">hello@olimann.com</a>.",
+                p="You will get proposed times for the 45-minute conversation — from a person, not an autoresponder. If it is urgent, write to <a href=\"mailto:info@olimann.com\">info@olimann.com</a>.",
                 cta="Back to the start"),
     imprint=dict(title="Legal notice", intro="Information pursuant to § 5 DDG (German Digital Services Act). The German version at <a href=\"/de/impressum/\">/de/impressum/</a> is authoritative.",
                  html="""<h2>Provider</h2>
 <address><mark class="todo">[Company legal name and form]</mark><br><mark class="todo">[Street and number]</mark><br><mark class="todo">[Postcode, City]</mark>, Germany</address>
 <h3>Represented by</h3><p><mark class="todo">[Managing director(s)]</mark></p>
-<h3>Contact</h3><p>Email: <a href="mailto:hello@olimann.com">hello@olimann.com</a><br>Phone: <mark class="todo">[+49 …]</mark></p>
+<h3>Contact</h3><p>Email: <a href="mailto:info@olimann.com">info@olimann.com</a><br>Phone: <mark class="todo">[+49 …]</mark></p>
 <h3>Register entry</h3><p><mark class="todo">[Register court, HRB number]</mark></p>
 <h3>VAT ID</h3><p>VAT identification number pursuant to § 27a UStG: <mark class="todo">[DE …]</mark></p>
 <h3>Responsible for content pursuant to § 18 (2) MStV</h3><p><mark class="todo">[Name, address]</mark></p>
@@ -182,13 +182,13 @@ T["en"] = dict(
 <h2>Copyright</h2><p>Content and works on these pages created by the provider are subject to German copyright law. Reproduction, editing, distribution and any kind of use beyond the limits of copyright require the written consent of the respective author.</p>"""),
     privacy=dict(title="Privacy policy", intro="Last updated: September 2026. The German version at <a href=\"/de/datenschutz/\">/de/datenschutz/</a> is authoritative.",
                  html="""<h2>1. Controller</h2>
-<address><mark class="todo">[Company legal name]</mark><br><mark class="todo">[Street and number]</mark><br><mark class="todo">[Postcode, City]</mark>, Germany<br>Email: <a href="mailto:hello@olimann.com">hello@olimann.com</a></address>
+<address><mark class="todo">[Company legal name]</mark><br><mark class="todo">[Street and number]</mark><br><mark class="todo">[Postcode, City]</mark>, Germany<br>Email: <a href="mailto:info@olimann.com">info@olimann.com</a></address>
 <h2>2. What this site does not do</h2><p>This website sets no cookies and uses no analytics or tracking services. Fonts and all other assets are served from our own domain; no third-party requests are made when you view a page.</p>
 <h2>3. Hosting and server logs</h2><p>This site is hosted by Hostinger International Ltd., 61 Lordou Vironos Street, 6023 Larnaca, Cyprus, in a data centre in the European Union (<mark class="todo">[location, e.g. Netherlands]</mark>). When you access the site, the web server automatically processes the IP address of the requesting device, date and time, the requested URL, the referring URL, browser type and version, and the operating system. This is necessary to deliver the site and to ensure its security and stability. Legal basis: Art. 6 (1) (f) GDPR. Server logs are deleted after <mark class="todo">[14]</mark> days at the latest. A data processing agreement pursuant to Art. 28 GDPR is in place with the hosting provider.</p>
 <h2>4. Constraint Audit form</h2><p>If you request an audit via the form, we process the information you enter: name, company, role, email address, website (optional), your answers to the questions about your company, and the time of submission. The data is transmitted to us by email and used exclusively to prepare and conduct the audit and to contact you about it. Legal basis: Art. 6 (1) (b) GDPR (pre-contractual measures) and Art. 6 (1) (f) GDPR (our legitimate interest in responding to inquiries). We retain the data for as long as necessary to handle your request; if no business relationship follows, it is deleted after <mark class="todo">[12]</mark> months. Statutory retention obligations remain unaffected. The form contains a hidden field that is used solely to detect automated submissions; no data is stored for this purpose.</p>
 <h2>5. Email contact</h2><p>If you contact us by email, we process your email address and the content of your message to handle your request. Legal basis: Art. 6 (1) (b) or (f) GDPR.</p>
 <h2>6. Recipients</h2><p>We do not sell or share your data. Recipients are only our hosting provider (see section 3) and our email provider, each bound by a data processing agreement. No data is transferred to countries outside the EU/EEA unless you have been informed otherwise.</p>
-<h2>7. Your rights</h2><p>You have the right to access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object to processing based on Art. 6 (1) (f) GDPR (Art. 21). You also have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR), for example the data protection authority of the German federal state in which we are based. To exercise your rights, write to <a href="mailto:hello@olimann.com">hello@olimann.com</a>.</p>
+<h2>7. Your rights</h2><p>You have the right to access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object to processing based on Art. 6 (1) (f) GDPR (Art. 21). You also have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR), for example the data protection authority of the German federal state in which we are based. To exercise your rights, write to <a href="mailto:info@olimann.com">info@olimann.com</a>.</p>
 <h2>8. Changes</h2><p>We will update this policy when the site or the law changes. The current version is always available on this page.</p>"""),
     notfound=dict(eyebrow="404", h1="This page isn't here.", p="The rest of the site is.", cta="Back to the start"),
 )
@@ -320,7 +320,7 @@ T["de"] = dict(
         get_h="Was Sie bekommen",
         get=["Eine klare Antwort auf „Nachfrage oder Kapazität?“ – mit Begründung.", "Das erste System, das wir bauen würden – und warum genau dieses.", "Einen Festpreis. Oder ein ehrliches „Noch nicht“."],
         free="Die Analyse ist kostenlos und unverbindlich.",
-        f=dict(error1="Bitte geben Sie Name, Unternehmen und eine gültige E-Mail-Adresse an.", error2="Die Nachricht konnte nicht gesendet werden. Bitte schreiben Sie uns direkt an <a href=\"mailto:hello@olimann.com\">hello@olimann.com</a>.",
+        f=dict(error1="Bitte geben Sie Name, Unternehmen und eine gültige E-Mail-Adresse an.", error2="Die Nachricht konnte nicht gesendet werden. Bitte schreiben Sie uns direkt an <a href=\"mailto:info@olimann.com\">info@olimann.com</a>.",
                q1="Sie", name="Name", company="Unternehmen", role="Rolle", email="E-Mail", website="Website (optional)",
                q2="Wo staut sich gerade die Arbeit?", q2hint="Wählen Sie alles aus, was zutrifft.",
                pile=["Anfragen warten auf Antwort", "Angebote und Kalkulationen dauern zu lange", "Unterschriebene Projekte warten auf den Start", "Projekte laufen aus dem Zeitplan", "Die Support-Warteschlange wächst", "Reporting dauert zu lange", "Einstellungen kommen nicht hinterher"],
@@ -333,13 +333,13 @@ T["de"] = dict(
                consent="Ich habe die <a href=\"/de/datenschutz/\">Datenschutzerklärung</a> gelesen. Meine Angaben werden ausschließlich zur Vorbereitung der Analyse verwendet.",
                submit="Analyse anfragen")),
     thanks=dict(eyebrow="Angekommen", h1="Vielen Dank. Ein Teammitglied meldet sich innerhalb von zwei Werktagen.",
-                p="Sie erhalten Terminvorschläge für das 45-minütige Gespräch – von einem Menschen, nicht von einem Autoresponder. Wenn es eilt, schreiben Sie an <a href=\"mailto:hello@olimann.com\">hello@olimann.com</a>.",
+                p="Sie erhalten Terminvorschläge für das 45-minütige Gespräch – von einem Menschen, nicht von einem Autoresponder. Wenn es eilt, schreiben Sie an <a href=\"mailto:info@olimann.com\">info@olimann.com</a>.",
                 cta="Zur Startseite"),
     imprint=dict(title="Impressum", intro="Angaben gemäß § 5 DDG.",
                  html="""<h2>Anbieter</h2>
 <address><mark class="todo">[Firma und Rechtsform]</mark><br><mark class="todo">[Straße und Hausnummer]</mark><br><mark class="todo">[PLZ Ort]</mark></address>
 <h3>Vertreten durch</h3><p><mark class="todo">[Geschäftsführer/in]</mark></p>
-<h3>Kontakt</h3><p>E-Mail: <a href="mailto:hello@olimann.com">hello@olimann.com</a><br>Telefon: <mark class="todo">[+49 …]</mark></p>
+<h3>Kontakt</h3><p>E-Mail: <a href="mailto:info@olimann.com">info@olimann.com</a><br>Telefon: <mark class="todo">[+49 …]</mark></p>
 <h3>Registereintrag</h3><p><mark class="todo">[Registergericht, HRB-Nummer]</mark></p>
 <h3>Umsatzsteuer-ID</h3><p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: <mark class="todo">[DE …]</mark></p>
 <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3><p><mark class="todo">[Name, Anschrift]</mark></p>
@@ -349,13 +349,13 @@ T["de"] = dict(
 <h2>Urheberrecht</h2><p>Die durch den Anbieter erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>"""),
     privacy=dict(title="Datenschutzerklärung", intro="Stand: September 2026.",
                  html="""<h2>1. Verantwortlicher</h2>
-<address><mark class="todo">[Firma]</mark><br><mark class="todo">[Straße und Hausnummer]</mark><br><mark class="todo">[PLZ Ort]</mark><br>E-Mail: <a href="mailto:hello@olimann.com">hello@olimann.com</a></address>
+<address><mark class="todo">[Firma]</mark><br><mark class="todo">[Straße und Hausnummer]</mark><br><mark class="todo">[PLZ Ort]</mark><br>E-Mail: <a href="mailto:info@olimann.com">info@olimann.com</a></address>
 <h2>2. Was diese Website nicht tut</h2><p>Diese Website setzt keine Cookies und verwendet keine Analyse- oder Tracking-Dienste. Schriften und alle weiteren Ressourcen werden von unserer eigenen Domain ausgeliefert; beim Aufruf einer Seite werden keine Anfragen an Dritte gestellt.</p>
 <h2>3. Hosting und Server-Logfiles</h2><p>Diese Website wird bei Hostinger International Ltd., 61 Lordou Vironos Street, 6023 Larnaca, Zypern, in einem Rechenzentrum in der Europäischen Union (<mark class="todo">[Standort, z. B. Niederlande]</mark>) gehostet. Beim Aufruf der Website verarbeitet der Webserver automatisch die IP-Adresse des anfragenden Geräts, Datum und Uhrzeit, die aufgerufene URL, die zuvor besuchte Seite (Referrer), Browsertyp und -version sowie das Betriebssystem. Dies ist zur Auslieferung der Website und zur Gewährleistung ihrer Sicherheit und Stabilität erforderlich. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Die Logfiles werden spätestens nach <mark class="todo">[14]</mark> Tagen gelöscht. Mit dem Hosting-Anbieter besteht ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.</p>
 <h2>4. Formular „Engpass-Analyse“</h2><p>Wenn Sie über das Formular eine Analyse anfragen, verarbeiten wir die von Ihnen eingegebenen Angaben: Name, Unternehmen, Rolle, E-Mail-Adresse, Website (optional), Ihre Antworten auf die Fragen zu Ihrem Unternehmen sowie den Zeitpunkt der Übermittlung. Die Daten werden uns per E-Mail übermittelt und ausschließlich zur Vorbereitung und Durchführung der Analyse sowie zur Kontaktaufnahme in dieser Sache verwendet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) sowie Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse an der Beantwortung von Anfragen). Wir speichern die Daten, solange es zur Bearbeitung Ihrer Anfrage erforderlich ist; kommt keine Geschäftsbeziehung zustande, werden sie nach <mark class="todo">[12]</mark> Monaten gelöscht. Gesetzliche Aufbewahrungspflichten bleiben unberührt. Das Formular enthält ein verborgenes Feld, das ausschließlich der Erkennung automatisierter Eingaben dient; hierfür werden keine Daten gespeichert.</p>
 <h2>5. Kontakt per E-Mail</h2><p>Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir Ihre E-Mail-Adresse und den Inhalt Ihrer Nachricht zur Bearbeitung Ihres Anliegens. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO.</p>
 <h2>6. Empfänger</h2><p>Wir verkaufen oder teilen Ihre Daten nicht. Empfänger sind ausschließlich unser Hosting-Anbieter (siehe Ziffer 3) und unser E-Mail-Anbieter, jeweils auf Grundlage eines Auftragsverarbeitungsvertrags. Eine Übermittlung in Länder außerhalb der EU/des EWR findet nicht statt, sofern Sie nicht anderweitig informiert wurden.</p>
-<h2>7. Ihre Rechte</h2><p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie das Recht, einer Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zu widersprechen (Art. 21). Außerdem haben Sie das Recht, sich bei einer Aufsichtsbehörde zu beschweren (Art. 77 DSGVO), etwa bei der Datenschutzbehörde des Bundeslandes, in dem wir unseren Sitz haben. Zur Ausübung Ihrer Rechte wenden Sie sich an <a href="mailto:hello@olimann.com">hello@olimann.com</a>.</p>
+<h2>7. Ihre Rechte</h2><p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie das Recht, einer Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zu widersprechen (Art. 21). Außerdem haben Sie das Recht, sich bei einer Aufsichtsbehörde zu beschweren (Art. 77 DSGVO), etwa bei der Datenschutzbehörde des Bundeslandes, in dem wir unseren Sitz haben. Zur Ausübung Ihrer Rechte wenden Sie sich an <a href="mailto:info@olimann.com">info@olimann.com</a>.</p>
 <h2>8. Änderungen</h2><p>Wir passen diese Erklärung an, wenn sich die Website oder die Rechtslage ändert. Die jeweils aktuelle Fassung finden Sie auf dieser Seite.</p>"""),
     notfound=dict(eyebrow="404", h1="Diese Seite gibt es hier nicht.", p="Den Rest der Website schon.", cta="Zur Startseite"),
 )

@@ -26,10 +26,7 @@ cd ../dist && zip -r ../olimann-site.zip .   # includes .htaccess
 2. Delete whatever is in `public_html` (default placeholder files), upload `olimann-site.zip`, right-click → **Extract** into `public_html`, then delete the zip.
    The result must be `public_html/index.html`, `public_html/de/`, `public_html/assets/`, `public_html/.htaccess`, etc. — not `public_html/dist/...`.
 3. hPanel → **SSL**: make sure the free certificate is active and "Force HTTPS" is on (the `.htaccess` also redirects to https and drops `www.`).
-4. hPanel → **Emails**: create the two mailboxes the form uses, or change them in `api/send.php`:
-   - `hello@olimann.com` — receives audit requests (`$TO`)
-   - `website@olimann.com` — the sender address (`$FROM`); it must exist on the domain or Hostinger's PHP `mail()` will refuse it.
-   Then submit a test request on `/constraint-audit/` and check the inbox (and spam folder once).
+4. hPanel → **Emails**: the form sends to and from `info@olimann.com` (both set at the top of `api/send.php`). The mailbox must exist on the domain, or Hostinger's PHP `mail()` will refuse to send. Then submit a test request on `/constraint-audit/` and check the inbox (and the spam folder once).
 5. Check `https://olimann.com/`, `/de/`, `/constraint-audit/`, `/imprint/` on a phone and a laptop.
 
 ### Before sending the link to anyone

@@ -6,8 +6,8 @@
  */
 declare(strict_types=1);
 
-$TO   = 'hello@olimann.com';      // <-- change to your inbox
-$FROM = 'website@olimann.com';    // <-- must exist on olimann.com
+$TO   = 'info@olimann.com';       // receives audit requests
+$FROM = 'info@olimann.com';       // sender: an existing mailbox on olimann.com
 
 $lang   = (($_POST['lang'] ?? 'en') === 'de') ? 'de' : 'en';
 $thanks = $lang === 'de' ? '/de/engpass-analyse/danke/' : '/constraint-audit/thanks/';
